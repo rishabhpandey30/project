@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>courses</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="projectcss.css">
+</head>
+<body>
+
+  <!--header section start-->
+    <header class="header">
+      <section class="flex">
+        <a href="index.html" class="logo">EDUCA</a>
+        <form action="" method="post" class="search">
+          <input type="text" name="search_box" placeholder="search courses"
+          required maxlength="100">
+          <button type="submit" class="fas fa-search" name="search_box"></button>  
+        </form>
+        <div class="icon">
+          <div id="menu-btn" class="fas fa-bars"></div>
+          <div id="search-btn" class="fas fa-search"></div>
+          <div id="user-btn" class="fas fa-user"></div>
+          <div id="toggle-btn" class="fas fa-sun"></div>
+        </div>
+
+        <div class="profile">
+          <img src="avatar.png" alt="image">
+          <h3>Rishabh Pandey</h3>
+          <span>student</span>
+          <a href="courses.html" class="btn">view profile</a>
+          <div class="flex-btn">
+            <a href="sign.html" class="option-btn">login</a>
+            <a href="sign.html" class="option-btn">register</a>
+          </div>
+        </div>
+      </section>
+    </header>
+    <!--end of header-->
+    <!--side bar section starts-->
+    <div class="side-bar">
+      <div class="close-side-bar">
+        <i class="fas fa-times"></i>
+      </div>
+      <div class="profile">
+        <img src="avatar.png" alt="image">
+        <h3>Rishabh Pandey</h3>
+        <span>student</span>
+        <a href="courses.html" class="btn">view profile</a>
+      </div>
+      <nav class="navbar">
+        <a href="index.html"><i class="fas fa-home"></i><span>home</span></a>
+        <a href="index.html#courses"><i class="fas fa-graduation-cap"></i><span>courses</span></a>
+        <a href="index.html#te"><i class="fas fa-chalkboard-user"></i><span>teachers</span></a>
+        <a href="index.html#aboutus"><i class="fas fa-question"></i><span>about us</span></a>
+        <a href="index.html#contact"><i class="fas fa-headset"></i><span>contact us</span></a>
+      </nav>
+    </div>
+    <!--side bar section ends-->
+    <!--course section-->
+    <section class="courses" id="courses">
+      <h1 class="heading">Our Courses</h1>
+      <div class="box-container">
+          <div class="box">
+              <div class="tutor">
+                  <img src="image/avatar1 (1).jpg" alt="">
+                  <div>
+                      <h3>Sandeep Singh</h3>
+                  </div>
+              </div>
+              <img src="image/html.jpg" class="thumb" alt="thumbnail">
+              <h3 class="title">Complete HTML Tutorial</h3>
+              <a target="_blank" href="https://drive.google.com/drive/folders/1hpaNlPr7JvucEAEmFZwXXYD8L1xDHANa" class="inline-btn">view playlist</a>
+          </div>
+          <div class="box">
+              <div class="tutor">
+                  <img src="image/avatar1 (2).jpg" alt="">
+                  <div>
+                      <h3>Shradha Verma</h3>
+                  </div>
+              </div>
+              <img src="image/css.jpg" class="thumb" alt="thumbnail">
+              <h3 class="title">Complete CSS Tutorial</h3>
+              <a target="_blank" href="https://drive.google.com/drive/folders/1hpaNlPr7JvucEAEmFZwXXYD8L1xDHANa" class="inline-btn">view playlist</a>
+          </div>
+          <div class="box">
+              <div class="tutor">
+                  <img src="image/avatar1 (3).jpg" alt="">
+                  <div>
+                      <h3>Varun Kapoor</h3>
+                  </div>
+              </div>
+              <img src="image/Jss.jpg" class="thumb" alt="thumbnail">
+              <h3 class="title">Complete JS Tutorial</h3>
+              <a target="_blank" href="https://drive.google.com/drive/folders/1hpaNlPr7JvucEAEmFZwXXYD8L1xDHANa" class="inline-btn">view playlist</a>
+          </div>
+          <div class="box">
+              <div class="tutor">
+                  <img src="image/avatar1 (4).jpg" alt="">
+                  <div>
+                      <h3>Avantika Khandelwal</h3>
+                  </div>
+              </div>
+              <img src="image/python.png" class="thumb" alt="thumbnail">
+              <h3 class="title">Complete PYTHON Tutorial</h3>
+              <a target="_blank" href="https://youtube.com/playlist?list=PLu0W_9lII9agwh1XjRt242xIpHhPT2llg&si=3dSnKy1sFQ9MmZv4" class="inline-btn">view playlist</a>
+          </div>
+          <div class="box">
+              <div class="tutor">
+                  <img src="image/avatar1 (5).jpg" alt="">
+                  <div>
+                      <h3>Ayush Kumar</h3>
+                  </div>
+              </div>
+              <img src="image/c++.png" class="thumb" alt="thumbnail">
+              <h3 class="title">Complete C++ Tutorial</h3>
+              <a target="_blank" href="https://youtube.com/playlist?list=PLfqMhTWNBTe0b2nM6JHVCnAkhQRGiZMSJ&si=C4WZ5L4g8DKMVrs1" class="inline-btn">view playlist</a>
+          </div>
+          <div class="box">
+              <div class="tutor">
+                  <img src="image/avatar1 (6).jpg" alt="">
+                  <div>
+                      <h3>Harsh Patel</h3>
+                  </div>
+              </div>
+              <img src="image/java.jpg" class="thumb" alt="thumbnail">
+              <h3 class="title">Complete JAVA Tutorial</h3>
+              <a target="_blank" href="https://youtube.com/playlist?list=PLu0W_9lII9agS67Uits0UnJyrYiXhDS6q&si=G9-u-A0hElYUmifQ" class="inline-btn">view playlist</a>
+          </div>
+      </div>
+
+    <!--footer section starts-->
+    <footer class="footer">
+      &copy; copyright @ 2024 by <span>educa</span> | all rights reserved |
+    </footer>
+    <!--footer section ends-->
+
+
+    <script src="projectjs.js"></script>
+
+</body>
+</html>

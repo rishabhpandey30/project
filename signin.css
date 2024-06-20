@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position:relative;
+    background-color: #eee
+}
+.form-box{
+    width: 90%;
+    max-width: 500px;
+    max-height: 620px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #fff;
+    padding:50px 60px 70px;
+    text-align: center;
+    background-color: white;
+}
+.form-box h1{
+    font-size: 30px;
+    margin-bottom: 60px;
+    color: #8e44ae;
+    position: relative;
+}
+.form-box h1::after{
+
+    content: '';
+    width: 30px;
+    height: 4px;
+    border-radius: 3px;
+    background: #3c00a0;
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.input-field{
+    background: #eaeaea;
+    margin: 15px 0;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+}
+input{
+    width: 100%;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    padding: 18px 15px; 
+    max-height: 65px;
+    transition: max-height 0.5s;
+    overflow: hidden;  
+}
+.input-field i{
+    margin-left: 15px;
+    color: #999;
+}
+form p{
+    text-align: left;
+    font-size: 13px;
+}
+form p a{
+    text-decoration: none;
+    color:#8e44ae;
+}
+#signinbtn:hover{
+background-color: #6F00FF;
+}
+#signupbtn:hover{
+    background-color: #6F00FF;}
+.btn-field{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.btn-field button{
+    flex-basis: 48%;
+    background: #8e44ae;
+    height: 40px;
+    border-radius: 20px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    transition: 1s;
+}
+.input-group{
+    height: 280px;
+}
+.btn-field button.disable{
+    background: #eaeaea;
+    color:#555;
+}
+#signinbtn{
+    width: 20%;
+    height: 8%;
+    position: absolute;
+    left: 10%;
+    bottom:10%
+}
+#signupbtn{
+    width: 20%;
+    height: 8%;
+    position: absolute;
+    left: 40%;
+    bottom: 10%;
+}

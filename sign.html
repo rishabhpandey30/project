@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Sign in</title>
+    <link rel="stylesheet" href="signin.css">
+    <script src="https://kit.fontawesome.com/1f69cec019.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container">
+    <div  class="form-box">
+        <h1 id="title"> Sign In </h1>
+        <form>
+            <div class="input-group">
+                <div class="input-field" id="nameField">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" placeholder="Name">
+                </div>
+                <div class="input-field">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" placeholder="Email">
+                </div>
+                <div class="input-field">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" placeholder="Password">
+                </div>
+                <p>Forget password <a href="#">Click Here!</a></p>
+            </div>
+            <div class="btn-field">
+                <a href="index.html" >
+                <button type="button" id="signinbtn" >Sign In</button>
+                <button type="button" class="disable" id="signupbtn">Sign Up</button>
+                
+            </div>
+        </form>
+    </div>
+
+</div>
+<script>
+    let signinbtn = document.getElementById("signinbtn");
+    let signupbtn = document.getElementById("signupbtn");
+    let namefield= document.getElementById("nameField");
+    let title = document.getElementById("title");
+signupbtn.oneclick=function(){
+    nameField.style.maxHeight ="0";
+    title.innerHTML = "Sign In";
+    signinbtn.classList.add("disable");
+    signinbtn.classList.remove("disable");
+}
+</script>
+</body>
+</html>

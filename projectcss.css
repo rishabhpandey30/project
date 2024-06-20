@@ -1,0 +1,817 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400;6..12,500;6..12,600&display=swap');
+
+:root{
+    --main-color:#8e44ad;
+    --red:#e74c3c;
+    --orange:#f39c12;
+    --white:#fff;
+    --black:#2c3e50;
+    --light-color:#888;
+    --light-bg:#eee;
+    --border:.1rem solid rgba(0,0,0,.2);
+}
+
+*{
+    font-family: 'Nunito Sans', sans-serif;
+    margin: 0;padding: 0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+
+*::selection{
+    background-color: var(--orange);
+    color: #fff;
+}
+
+*::-webkit-scrollbar{
+    height: 5rem;
+    width: 1rem;
+}
+*::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+*::-webkit-scrollbar-thumb{
+    background-color: var(--light-color);
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+body{
+    background-color: var(--light-bg);
+    padding-left: 30rem;
+}
+body.dark{
+    --light-color:#aaa;
+    --light-bg:#333;
+    --black:#fff;
+    --white:#222;
+    --border:.1rem solid rgba(255,255,255,.2);
+ }
+body.active{
+    padding-left: 0;
+}
+section{
+    padding: .2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.btn,
+.option-btn,
+.delete-btn,
+.inline-btn,
+.inline-option-btn,
+.inline-delete-btn{
+    border-radius: .5rem;
+    padding: 1rem 3rem;
+    font-size: 1.8rem;
+    color: #fff;
+    margin-top: 1rem;
+    text-transform: capitalize;
+    cursor: pointer;
+    text-align: center;
+}
+.btn,
+.option-btn,
+.delete-btn{
+    display: block;
+    width: 100%;
+}
+.inline-btn,
+.inline-option-btn,
+.inline-delete-btn{
+    display: inline-block;
+}
+.btn,
+.inline-btn{
+    background-color: var(--main-color);
+}
+.option-btn,
+.inline-option-btn{
+    background-color: var(--orange);
+    
+}
+.delete-btn,
+.inline-delete-btn{
+    background-color: var(--red);
+}
+.btn:hover,
+.option-btn:hover,
+.delete-btn:hover,
+.inline-btn:hover,
+.inline-option-btn:hover,
+.inline-delete-btn:hover{
+    background-color: var(--black);
+    color: var(--white);
+}
+.flex-btn{
+    display: flex;
+    gap: 0.8rem;
+}
+.heading{
+    padding-bottom: 1.5rem;
+    border-bottom: var(--border);
+    font-size: 2.5rem;
+    color:var(--black);
+    text-transform: capitalize;
+    margin-bottom: 2rem;
+}
+.header{
+    background-color: var(--white);
+    border-bottom: var(--border);
+    position: sticky;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+}
+.header .flex{
+    padding: 1.5rem 2rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header .flex .logo{
+    font-size: 3rem;
+    color: var(--main-color);
+    font-weight: bolder;
+}
+.header .flex .search{
+    width: 50rem;
+    border-radius: .5rem;
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 1.5rem 2rem;
+    background-color: var(--light-bg);
+}
+.header .flex .search input{
+    width: 100%;
+    background: none;
+    font-size: 2rem;
+    color: var(--black);
+}
+.header .flex .search button{
+    font-size: 2rem;
+    color: var(--black);
+    cursor: pointer;
+    background: none;
+}
+.header .flex .search button:hover{
+    color: var(--main-color);
+}
+.header .flex .icon div{
+    font-size: 2rem;
+    color: var(--black);
+    border-radius: .5rem;
+    height: 4.5rem;
+    cursor: pointer;
+    width: 4.5rem;
+    line-height: 4.4rem;
+    background-color: var(--light-bg);
+    text-align: center;
+    margin-left: 1rem;
+}
+.header .flex .icon div:hover{
+    background-color: var(--black);
+    color: var(--white);
+}
+#search-btn{
+    display: none;
+}
+.header .flex .profile{
+    position: absolute;
+    top: 120%; right: 2rem;
+    background-color: var(--white);
+    border-radius: 5rem;
+    padding: 2rem;
+    text-align: center;
+    width: 30rem;
+    transform: scale(0);
+    transform-origin: top right;
+    transition: .15s linear;
+}
+.header .flex .profile.active{
+    transform: scale(1);
+}
+.header .flex .profile img{
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: .5rem;
+}
+.header .flex .profile h3{
+    font-size: 2rem;
+    color: var(--black);
+}
+.header .flex .profile span{
+    color: var(--light-color);
+    font-size: 1.6rem;
+}
+.side-bar{
+    position: fixed;
+    top: 0; left: 0;
+    height: 100vh;
+    width:30rem;
+    background-color: var(--white);
+    border-right: var(--border);
+    z-index: 1200;
+}
+.side-bar .close-side-bar{
+    text-align: right;
+    padding: 2rem;
+    padding-bottom: 0;
+    display: none;
+}
+.side-bar .close-side-bar i{
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.4rem;
+    font-size: 2.5rem;
+    color: #fff;
+    cursor: pointer;
+    background-color: var(--red);
+    text-align: center; 
+    border-radius: .5rem;
+}
+.side-bar .close-side-bar i:hover{
+    background-color: var(--black);
+}
+.side-bar .profile{
+    padding: 3rem 2rem;
+    text-align: center;
+}
+.side-bar .profile img{
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: .5rem;
+}
+.side-bar .profile h3{
+    font-size: 2rem;
+    color: var(--black);
+}
+.side-bar .profile span{
+    font-size: 2rem;
+    color: var(--black);
+}
+.side-bar .navbar a{
+    display: block;
+    padding: 2rem;
+    margin: .5rem 0;
+    font-size: 1.8rem;
+}
+.side-bar .navbar a i{
+    color: var(--main-color);
+    margin-right: 1.5rem;
+    transition: .15s linear;
+}
+.side-bar .navbar a span{
+    color: var(--light-color);
+}
+.side-bar .navbar a:hover{
+    background-color: var(--light-bg);
+}
+.side-bar .navbar a:hover i{
+    margin-right: 2.5rem;
+}
+.side-bar.active{
+    left: -31rem;
+}
+.courses .heading{
+    padding-top: 2.8rem;
+    font-size: 3.2rem;
+}
+.courses .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(30rem , 1fr));
+    gap: 1.5rem;
+    align-items: flex-start;
+    justify-content: center;
+}
+.courses .box-container .box{
+    border-radius: .5rem;
+    background-color: var(--white);
+    padding: 2rem;
+    box-shadow: 0px 0px 14px 1px grey;
+}
+.courses .box-container .box .tutor{
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.courses .box-container .box .tutor img{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.courses .box-container .box h3{
+    font-size: 2.2rem;
+    color: var(--black);
+    margin-bottom: .2rem;
+}
+.courses .box-container .box .thumb{
+    width: 100%;
+    border-radius: .5rem;
+    height: 20rem;
+    object-fit: cover;
+}
+.courses .box-container .box .title{
+    font-size: 2rem;
+    column-rule: var(--black);
+    margin-top: .5rem;
+    padding: .5rem 0;
+}
+.courses .more-btn{
+    margin-top: 2rem;
+    text-align: center;
+    padding-bottom: 4rem;
+}
+.about .row{
+    display: flex;
+    align-items: center;
+    gap: 1.7rem;
+    flex-wrap: wrap;
+}
+.about .row .image{
+    flex:1 1 40rem;
+}
+.about .row .image img{
+    width: 100%;
+    height: 60rem;
+}
+.about .row .content{
+    flex: 1 1 40rem;
+    text-align: center;
+}
+.about .row .content h3{
+    font-size: 3.5rem;
+    color: var(--black);
+}
+.about .row .content p{
+    line-height: 3rem;
+    font-size: 2rem;
+    color: var(--light-color);
+    padding: 1rem 0;
+}
+.about .box-container{
+    margin-top: 3rem;
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+.about .box-container .box{
+    flex: 1 1 20rem;
+    display: flex;
+    background-color: var(--white);
+    border-radius: .5rem;
+    padding: 2rem;
+    align-items: center;
+    gap: 2.1rem;
+}
+.about .box-container .box i{
+    font-size: 3rem;
+    color: var(--black)
+}
+.about .box-container .box h3{
+    color: var(--main-color);
+    font-size: 2.5rem;
+    margin-bottom: .2rem;
+}
+.about .box-container .box span{
+    font-size: 1.8rem;
+    color: var(--light-color);
+}
+.teachers .heading{
+    font-size: 3.2rem;
+}
+.teachers .tut p{
+    font-size: 2.5rem;
+    color: var(--black);
+    padding-bottom: 1.5rem;
+}
+.teachers .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem,1fr));
+    gap: 1.5rem;
+    align-items: flex-start;
+    justify-content: center;
+}
+.teachers .box-container .box{
+    border-radius: .5rem;
+    padding: 2rem;
+    background-color: var(--white);
+    box-shadow: 5px 5px 14px 2px grey;
+}
+.teachers .box-container .box .tutor{
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+.teachers .box-container .box .tutor img{
+    height: 5rem;
+    width: 5rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.teachers .box-container .box .tutor h3{
+    color: var(--black);
+    font-size: 2rem;
+    margin-bottom: .2rem;
+}
+.teachers .box-container .box .tutor span{
+    color: var(--main-color);
+    font-size: 1.5rem;
+}
+.teachers .box-container .box p{
+    padding-top: 1rem;
+    font-size: 1.7rem;
+    color: var(--light-color);
+}
+.teachers .box-container .box p span{
+    color: var(--main-color);
+} 
+.teachers .more-btn{
+    margin-top: 2rem;
+    text-align: center;
+} 
+.contact .row{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+.contact .row .image{
+    flex: 1 1 50rem;
+}
+.contact .row .image img{
+    height: 44rem;
+    width: 100%;
+}
+.contact .row form{
+    flex: 1 1 30rem;
+    background-color: var(--white);
+    border-radius: .5rem;
+    padding: 2rem;
+    text-align: center;
+    margin-top: 5.6rem;
+}
+.contact .row form h3{
+    font-size: 2.6rem;
+    margin-bottom: 1rem;
+    color: var(--black);
+}
+.contact .row form .box{
+    width: 100%;
+    margin: 1rem 0;
+    border-radius: .1rem;
+    background-color: var(--light-bg);
+    padding: 1rem;
+    color: var(--black);
+    font-size: 1.4rem;    
+}
+.contact .box-container{
+    margin-top: 2.2rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+.contact .box-container .box{
+    flex: 1 1 30rem;
+    border-radius: .5rem;
+    background-color: var(--white);
+    padding: 1.2rem;
+    text-align: center;
+}
+.contact .box-container .box i{
+    font-size: 2.2rem;
+    color: var(--main-color);
+    margin-bottom: 1rem;
+}
+.contact .box-container .box h3{
+    margin: 1.3rem 0;
+    font-size: 1.8rem;
+    color: var(--black);
+}
+.contact .box-container .box a{
+    display: block;
+    margin-top: .4rem;
+    font-size: 1.5rem;
+    color: var(--light-color);
+    line-height: 1.3rem;
+
+}
+.contact .box-container .box a:hover{
+    text-decoration: underline;
+    color: rgb(28, 28, 243);
+}
+.form-container{
+    display: flex;
+    align-items: center;
+    padding-left: 8%;
+    min-height: calc(100vh - 20rem);
+    padding-top: 2.3rem;
+}
+.form-container form{
+    background-color: var(--white);
+    border-radius: .5rem;
+    padding: 2rem;
+    width: 65%;
+    padding-top: 1.1rem;
+    box-shadow: 7px 11px 18px 9px #999999;
+}
+.form-container form h3{
+    text-align: center;
+    font-size: 2.7rem;
+    margin-bottom: 1.5rem;
+    padding-top: 1.1rem;
+}
+.form-container form p{
+    padding-top: 1.1rem;
+    font-size: 2.1rem;
+    color: var(--black)
+}
+.form-container form p span{
+    color: var(--red);
+}
+.form-container form .box{
+    width: 100%;
+    border-radius: .5rem;
+    margin: 1rem 0;
+    font-size: 1.8rem;
+    color: var(--black);
+    padding: 1.4rem;
+    background-color: var(--light-bg);
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: "Poppins", sans-serif;
+}
+
+
+.chatbot-toggler {
+position: fixed;
+bottom: 30px;
+right: 35px;
+outline: none;
+border: none;
+height: 50px;
+width: 50px;
+display: flex;
+cursor: pointer;
+align-items: center;
+justify-content: center;
+border-radius: 50%;
+background: #724ae8;
+transition: all 0.2s ease;
+}
+body.show-chatbot .chatbot-toggler {
+transform: rotate(90deg);
+}
+.chatbot-toggler span {
+color: #fff;
+position: absolute;
+}
+.chatbot-toggler span:last-child,
+body.show-chatbot .chatbot-toggler span:first-child  {
+opacity: 0;
+}
+body.show-chatbot .chatbot-toggler span:last-child {
+opacity: 1;
+}
+.chatbot {
+position: fixed;
+right: 35px;
+bottom: 90px;
+width: 420px;
+background: #fff;
+border-radius: 15px;
+overflow: hidden;
+opacity: 0;
+pointer-events: none;
+transform: scale(0.5);
+transform-origin: bottom right;
+box-shadow: 0 0 128px 0 rgba(0,0,0,0.1),
+          0 32px 64px -48px rgba(0,0,0,0.5);
+transition: all 0.1s ease;
+}
+body.show-chatbot .chatbot {
+opacity: 1;
+pointer-events: auto;
+transform: scale(1);
+}
+.chatbot header {
+padding: 16px 0;
+position: relative;
+text-align: center;
+color: #fff;
+background: #724ae8;
+box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+.chatbot header span {
+position: absolute;
+right: 15px;
+top: 50%;
+display: none;
+cursor: pointer;
+transform: translateY(-50%);
+}
+header h2 {
+font-size: 1.4rem;
+}
+.chatbot .chatbox {
+overflow-y: auto;
+height: 510px;
+padding: 30px 20px 100px;
+}
+.chatbot :where(.chatbox, textarea)::-webkit-scrollbar {
+width: 6px;
+}
+.chatbot :where(.chatbox, textarea)::-webkit-scrollbar-track {
+background: #fff;
+border-radius: 25px;
+}
+.chatbot :where(.chatbox, textarea)::-webkit-scrollbar-thumb {
+background: #ccc;
+border-radius: 25px;
+}
+.chatbox .chat {
+display: flex;
+list-style: none;
+}
+.chatbox .outgoing {
+margin: 20px 0;
+justify-content: flex-end;
+}
+.chatbox .incoming span {
+width: 32px;
+height: 32px;
+color: #fff;
+cursor: default;
+text-align: center;
+line-height: 32px;
+align-self: flex-end;
+background: #724ae8;
+border-radius: 4px;
+margin: 0 10px 7px 0;
+}
+.chatbox .chat p {
+white-space: pre-wrap;
+padding: 12px 16px;
+border-radius: 10px 10px 0 10px;
+max-width: 75%;
+color: #fff;
+font-size: 1.45rem;
+background: #724ae8;
+}
+.chatbox .incoming p {
+border-radius: 10px 10px 10px 0;
+}
+.chatbox .chat p.error {
+color: #721c24;
+background: #f8d7da;
+}
+.chatbox .incoming p {
+color: #000;
+background: #f2f2f2;
+}
+.chatbot .chat-input {
+display: flex;
+gap: 5px;
+position: absolute;
+bottom: 0;
+width: 100%;
+background: #fff;
+padding: 3px 20px;
+border-top: 1px solid #ddd;
+}
+.chat-input textarea {
+height: 55px;
+width: 100%;
+border: none;
+outline: none;
+resize: none;
+max-height: 180px;
+padding: 15px 15px 15px 0;
+font-size: 1.3rem;
+}
+.chat-input span {
+align-self: flex-end;
+color: #724ae8;
+cursor: pointer;
+height: 55px;
+display: flex;
+align-items: center;
+visibility: hidden;
+font-size: 2rem;
+}
+.chat-input textarea:valid ~ span {
+visibility: visible;
+}
+
+@media (max-width: 490px) {
+.chatbot-toggler {
+right: 20px;
+bottom: 20px;
+}
+.chatbot {
+right: 0;
+bottom: 0;
+height: 100%;
+border-radius: 0;
+width: 100%;
+}
+.chatbot .chatbox {
+height: 90%;
+padding: 25px 15px 100px;
+}
+.chatbot .chat-input {
+padding: 5px 15px;
+}
+.chatbot header span {
+display: block;
+}
+}
+
+
+
+
+
+
+
+
+.footer{
+    position: relative;
+    bottom: 0; right: 0; left: 0;
+    background-color: var(--white);
+    border-top: var(--border);
+    padding: 1.5rem 1.2rem;
+    text-align: center;
+    color: var(--black);
+    font-size: 1.7rem;
+    margin-top: 1.5rem;
+    z-index: 1000;
+}
+
+/*media queries*/
+@media(max-width:1200px){
+    body{
+        padding-left: 0;
+    }
+    .side-bar{
+        transition: .15s linear;
+        left: -30rem;
+    }
+    .side-bar.active{
+        left: 0;
+        box-shadow: 0 0 0 100vw rgba(0,0,0,.7);
+    }
+    .side-bar .close-side-bar{
+        display: block;
+    }
+}
+@media(max-width:991px){
+    html{
+        font-size: 55%;
+    }
+}
+@media(max-width:768px){
+    #search-btn{
+        display: inline-block;
+    }
+    .header .flex .search{
+        position: absolute;
+        top: 99%; left: 0;right: 0;
+        width: auto;
+        border-top: var(--border);
+        border-bottom: var(--border);
+        background-color: var(--white);
+        clip-path: polygon(0 0,100% 0, 100% 0, 0 0);
+        transition: .15s linear;
+    }
+    .header .flex .search.active{
+        clip-path: polygon(0 0,100% 0, 100% 100%, 0 100%)
+    }
+}
+@media(max-width:450px){
+    html{
+        font-size: 50%;
+    }
+    .heading{
+        font-size: 2rem;
+    }
+    .flex-btn{
+        flex-flow: column;
+        gap: 0;
+    }
+}
